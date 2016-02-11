@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Camera</key>
+	<dict>
+		<key>type</key>
+		<string>PerspectiveCamera</string>
+		<key>center</key>
+		<string>0 0.8 5</string>
+		<key>direction</key>
+		<string>0 0 -1</string>
+		<key>up</key>
+		<string>0 1 0</string>
+		<key>angle</key>
+		<string>30</string>
+	</dict>
+	<key>Lights</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>DirectionalLight</string>
+			<key>direction</key>
+			<string>-0.5 -0.5 -1</string>
+			<key>color</key>
+			<string>0.5 0.5 0.5</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PointLight</string>
+			<key>position</key>
+			<string>0 5 5</string>
+			<key>color</key>
+			<string>0.8 0.8 0.4</string>
+		</dict>
+	</array>
+	<key>Background</key>
+	<dict>
+		<key>color</key>
+		<string>0.1 0.2 0.7</string>
+		<key>ambientLight</key>
+		<string>0.1 0.1 0.1</string>
+	</dict>
+	<key>Materials</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.4 0.4 0.4</string>
+			<key>specularColor</key>
+			<string>0.7 0.7 0.7</string>
+			<key>shininess</key>
+			<string>20</string>
+		</dict>
+	</array>
+	<key>Group</key>
+	<array>
+		<dict>
+			<key>materialIndex</key>
+			<string>0</string>
+			<key>type</key>
+			<string>Transform</string>
+			<key>transforms</key>
+			<array>
+				<string>scale 5 5 5</string>
+				<string>translate 0.03 -0.0666 0</string>
+			</array>
+			<key>transformed</key>
+			<dict>
+				<key>type</key>
+				<string>TriangleMesh</string>
+				<key>objFile</key>
+				<string>bunny_1k</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

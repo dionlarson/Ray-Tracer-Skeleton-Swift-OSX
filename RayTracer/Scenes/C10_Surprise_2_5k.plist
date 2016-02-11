@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Camera</key>
+	<dict>
+		<key>type</key>
+		<string>PerspectiveCamera</string>
+		<key>center</key>
+		<string>-.47 .8 .8</string>
+		<key>direction</key>
+		<string>0.25 -0.4 -1</string>
+		<key>up</key>
+		<string>0 1 0</string>
+		<key>angle</key>
+		<string>25</string>
+	</dict>
+	<key>Lights</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>DirectionalLight</string>
+			<key>direction</key>
+			<string>-0.5 -0.5 -1</string>
+			<key>color</key>
+			<string>0 0 0</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PointLight</string>
+			<key>position</key>
+			<string>5 5 5</string>
+			<key>color</key>
+			<string>0.95 0.95 0.95</string>
+		</dict>
+	</array>
+	<key>Background</key>
+	<dict>
+		<key>color</key>
+		<string>0 0 0</string>
+		<key>ambientLight</key>
+		<string>0.1 0.1 0.1</string>
+	</dict>
+	<key>Materials</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.4 0.4 0.4</string>
+			<key>specularColor</key>
+			<string>0.7 0.7 0.7</string>
+			<key>shininess</key>
+			<string>20</string>
+		</dict>
+	</array>
+	<key>Group</key>
+	<array>
+		<dict>
+			<key>materialIndex</key>
+			<string>0</string>
+			<key>type</key>
+			<string>TriangleMesh</string>
+			<key>objFile</key>
+			<string>surprise_2_5k</string>
+		</dict>
+	</array>
+</dict>
+</plist>

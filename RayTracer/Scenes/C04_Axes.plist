@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Camera</key>
+	<dict>
+		<key>type</key>
+		<string>PerspectiveCamera</string>
+		<key>center</key>
+		<string>13 11 30</string>
+		<key>direction</key>
+		<string>-0.16 -0.12 -0.5</string>
+		<key>up</key>
+		<string>0 1 0</string>
+		<key>angle</key>
+		<string>30</string>
+	</dict>
+	<key>Lights</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>DirectionalLight</string>
+			<key>direction</key>
+			<string>-0.2 -0.4 -0.8</string>
+			<key>color</key>
+			<string>0.8 0.8 0.8</string>
+		</dict>
+	</array>
+	<key>Background</key>
+	<dict>
+		<key>color</key>
+		<string>0 0 0</string>
+		<key>ambientLight</key>
+		<string>0.2 0.2 0.2</string>
+	</dict>
+	<key>Materials</key>
+	<array>
+		<dict>
+			<key>diffuseColor</key>
+			<string>1 0 0</string>
+		</dict>
+		<dict>
+			<key>diffuseColor</key>
+			<string>0 1 0</string>
+		</dict>
+		<dict>
+			<key>diffuseColor</key>
+			<string>0 0 1</string>
+		</dict>
+		<dict>
+			<key>diffuseColor</key>
+			<string>1 1 1</string>
+		</dict>
+	</array>
+	<key>Group</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>Group</string>
+			<key>Group</key>
+			<array>
+				<dict>
+					<key>type</key>
+					<string>Transform</string>
+					<key>materialIndex</key>
+					<string>0</string>
+					<key>transforms</key>
+					<array>
+						<string>translate 5 0 0</string>
+						<string>scale 5 0.2 0.2</string>
+					</array>
+					<key>transformed</key>
+					<dict>
+						<key>type</key>
+						<string>TriangleMesh</string>
+						<key>objFile</key>
+						<string>cube</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>Transform</string>
+					<key>materialIndex</key>
+					<string>1</string>
+					<key>transforms</key>
+					<array>
+						<string>translate 0 5 0</string>
+						<string>scale 0.2 5 0.2</string>
+					</array>
+					<key>transformed</key>
+					<dict>
+						<key>type</key>
+						<string>TriangleMesh</string>
+						<key>objFile</key>
+						<string>cube</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>Transform</string>
+					<key>materialIndex</key>
+					<string>2</string>
+					<key>transforms</key>
+					<array>
+						<string>translate 0 0 5</string>
+						<string>scale 0.2 0.2 5</string>
+					</array>
+					<key>transformed</key>
+					<dict>
+						<key>type</key>
+						<string>TriangleMesh</string>
+						<key>objFile</key>
+						<string>cube</string>
+					</dict>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>Transform</string>
+			<key>materialIndex</key>
+			<string>3</string>
+			<key>transforms</key>
+			<array>
+				<string>translate 4 3 1</string>
+				<string>xRotate 10</string>
+				<string>yRotate 20</string>
+				<string>zRotate 30</string>
+				<string>scale 2 0.5 3</string>
+			</array>
+			<key>transformed</key>
+			<dict>
+				<key>type</key>
+				<string>TriangleMesh</string>
+				<key>objFile</key>
+				<string>cube</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

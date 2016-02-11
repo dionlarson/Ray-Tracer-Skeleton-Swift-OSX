@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Camera</key>
+	<dict>
+		<key>type</key>
+		<string>PerspectiveCamera</string>
+		<key>center</key>
+		<string>0 0 10</string>
+		<key>direction</key>
+		<string>0 0 -1</string>
+		<key>up</key>
+		<string>0 1 0</string>
+		<key>angle</key>
+		<string>35</string>
+	</dict>
+	<key>Lights</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>DirectionalLight</string>
+			<key>direction</key>
+			<string>-0.5 -0.5 -0.5</string>
+			<key>color</key>
+			<string>0.9 0.9 0.9</string>
+		</dict>
+	</array>
+	<key>Background</key>
+	<dict>
+		<key>color</key>
+		<string>0 0 0</string>
+		<key>ambientLight</key>
+		<string>0.1 0.1 0.1</string>
+	</dict>
+	<key>Materials</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.1 0.4 0.1</string>
+			<key>specularColor</key>
+			<string>0 0 0</string>
+			<key>shininess</key>
+			<string>1</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.1 0.4 0.1</string>
+			<key>specularColor</key>
+			<string>0.6 0.6 0.6</string>
+			<key>shininess</key>
+			<string>1</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.1 0.4 0.1</string>
+			<key>specularColor</key>
+			<string>0.6 0.6 0.6</string>
+			<key>shininess</key>
+			<string>2</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.1 0.4 0.1</string>
+			<key>specularColor</key>
+			<string>0.6 0.6 0.6</string>
+			<key>shininess</key>
+			<string>4</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.1 0.4 0.1</string>
+			<key>specularColor</key>
+			<string>0.6 0.6 0.6</string>
+			<key>shininess</key>
+			<string>8</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.1 0.4 0.1</string>
+			<key>specularColor</key>
+			<string>0.6 0.6 0.6</string>
+			<key>shininess</key>
+			<string>16</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.1 0.4 0.1</string>
+			<key>specularColor</key>
+			<string>0.6 0.6 0.6</string>
+			<key>shininess</key>
+			<string>32</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.1 0.4 0.1</string>
+			<key>specularColor</key>
+			<string>0.6 0.6 0.6</string>
+			<key>shininess</key>
+			<string>64</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>0.1 0.4 0.1</string>
+			<key>specularColor</key>
+			<string>0.6 0.6 0.6</string>
+			<key>shininess</key>
+			<string>128</string>
+		</dict>
+	</array>
+	<key>Group</key>
+	<array>
+		<dict>
+			<key>materialIndex</key>
+			<string>0</string>
+			<key>type</key>
+			<string>Sphere</string>
+			<key>center</key>
+			<string>-2 2 0</string>
+			<key>radius</key>
+			<string>0.9</string>
+		</dict>
+		<dict>
+			<key>materialIndex</key>
+			<string>1</string>
+			<key>type</key>
+			<string>Sphere</string>
+			<key>center</key>
+			<string>0 2 0</string>
+			<key>radius</key>
+			<string>0.9</string>
+		</dict>
+		<dict>
+			<key>materialIndex</key>
+			<string>2</string>
+			<key>type</key>
+			<string>Sphere</string>
+			<key>center</key>
+			<string>2 2 0</string>
+			<key>radius</key>
+			<string>0.9</string>
+		</dict>
+		<dict>
+			<key>materialIndex</key>
+			<string>3</string>
+			<key>type</key>
+			<string>Sphere</string>
+			<key>center</key>
+			<string>-2 0 0</string>
+			<key>radius</key>
+			<string>0.9</string>
+		</dict>
+		<dict>
+			<key>materialIndex</key>
+			<string>4</string>
+			<key>type</key>
+			<string>Sphere</string>
+			<key>center</key>
+			<string>0 0 0</string>
+			<key>radius</key>
+			<string>0.9</string>
+		</dict>
+		<dict>
+			<key>materialIndex</key>
+			<string>5</string>
+			<key>type</key>
+			<string>Sphere</string>
+			<key>center</key>
+			<string>2 0 0</string>
+			<key>radius</key>
+			<string>0.9</string>
+		</dict>
+		<dict>
+			<key>materialIndex</key>
+			<string>6</string>
+			<key>type</key>
+			<string>Sphere</string>
+			<key>center</key>
+			<string>-2 -2 0</string>
+			<key>radius</key>
+			<string>0.9</string>
+		</dict>
+		<dict>
+			<key>materialIndex</key>
+			<string>7</string>
+			<key>type</key>
+			<string>Sphere</string>
+			<key>center</key>
+			<string>0 -2 0</string>
+			<key>radius</key>
+			<string>0.9</string>
+		</dict>
+		<dict>
+			<key>materialIndex</key>
+			<string>8</string>
+			<key>type</key>
+			<string>Sphere</string>
+			<key>center</key>
+			<string>2 -2 0</string>
+			<key>radius</key>
+			<string>0.9</string>
+		</dict>
+	</array>
+</dict>
+</plist>
