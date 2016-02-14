@@ -78,6 +78,6 @@ Ray caster/tracer skeleton code and scene files adapted from starter code provid
 
 All additional code written by Dion Larson unless noted otherwise.
 
-Original skeleton code available for free with [here](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-837-computer-graphics-fall-2012/) (assignments 4 & 5).
+Original skeleton code available for free [here](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-837-computer-graphics-fall-2012/) (assignments 4 & 5).
 
 Licensed under [Creative Commons 4.0 (Attribution, Noncommercial, Share Alike)](http://creativecommons.org/licenses/by-nc-sa/4.0/).
