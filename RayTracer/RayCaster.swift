@@ -92,6 +92,7 @@ class RayCaster: Renderer {
     func processDepth(saveImage save: Bool) {
         let result = depthImage.generateDepthNSImage()
         windowController.resultsWindow.depth = result
+        
         if save {
             result.savePNGToDesktop("\(sceneFile.rawValue)_depth")
         }
@@ -100,12 +101,16 @@ class RayCaster: Renderer {
     func processNormals(saveImage save: Bool) {
         let result = normalsImage.generateNormalsNSImage()
         windowController.resultsWindow.normals = result
-        result.savePNGToDesktop("\(sceneFile.rawValue)_normal")
+        
+        if save {
+            result.savePNGToDesktop("\(sceneFile.rawValue)_normal")
+        }
     }
     
     func displayResult(saveImage save: Bool) {
         windowController.updateStatusLabel("Processing pixels for", scene: sceneFile)
         let result = image.generateNSImage()
+        windowController.resultsWindow.rendered = result
         windowController.updateImageView(result)
         
         if save {

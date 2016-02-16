@@ -45,7 +45,6 @@ class ResultsWindowController: NSWindowController {
     func updateImageView(image: NSImage) {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             if let resultsWindow = self.resultsWindow {
-                resultsWindow.rendered = image
                 resultsWindow.imageView.image = image
                 resultsWindow.makeKeyAndOrderFront(self)
             }
