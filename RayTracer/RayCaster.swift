@@ -86,7 +86,7 @@ class RayCaster: Renderer {
     }
     
     func setNormalPixel(x x: Int, y: Int, hit: Hit) {
-        self.normalsImage.setPixel(x: x, y: y, color: hit.normal!)
+        self.normalsImage.setPixel(x: x, y: y, color: abs(hit.normal!))
     }
     
     func processDepth(saveImage save: Bool) {
