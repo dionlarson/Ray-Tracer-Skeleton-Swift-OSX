@@ -30,7 +30,7 @@ The shaded image is set up to show automatically once done processing. Early on,
 
 # Week 1
 
-## Camera, raycast loop, ray-plane intersections and depth images
+## Camera, ray cast loop, ray-plane intersections and depth images
 
 ### Set up the camera
 
@@ -63,6 +63,43 @@ Once your ray cast loop is down, call `processDepth`. See the hints below for mo
 ### Expected results
 
 ![Depth image for a plane](Solution Images/Week 1/C01_Plane_depth.png)
+
+# Week 2
+
+## Ray-sphere intersection and normals image
+
+### Ray-sphere intersection
+
+Implement the `intersect` method in `Sphere`. This will automatically get called as the scene's root group iterates over it's primitives. See the lecture slides if you need help! You'll also want to implement the `Ray` class' `pointAtParameter` method for use when calculating the sphere's normals.
+
+### Render normals
+
+For each intersection you'll want to save the normal to `normalsImage`. Use `setNormalPixel` to convert a normal vector to RGB values. If you cloned this code before 2/17/16, make sure your `setNormalPixel` looks like:
+
+```
+    func setNormalPixel(x x: Int, y: Int, hit: Hit) {
+        self.normalsImage.setPixel(x: x, y: y, color: abs(hit.normal!))
+    }
+```
+Without the `abs`, normals in the negative direction get clipped to `0` (black).
+
+### Hints
+
+- Set `SCENES_TO_PARSE` to `SceneFile.spheres`
+- Remember that the equations assume a sphere is centered around the origin. Use the sphere's real center to translate the ray's origin before intersection and to translate the intersection point when computing the normal.
+- Don't assume ||R<sub>d</sub>|| = 1, doing so will make handling transforms more challenging.
+- Take the elemental-wise absolute value of the intersection's normal vector (`abs` function) when passing the normal to set pixel in `setNormalPixel`. Otherwise, negative values will be clipped to `0`.
+- The RayCaster is currently set up to only automatically show the shaded image (or depth image if you modified it last week). You'll need to add `windowController.updateImageView(result)` to `processNormals` if you want it to show automatically. Otherwise, press `N` on your keyboard while the window is active to view it.
+
+### Expected results
+
+![Depth image for C01](Solution Images/Week 2/C01_Plane_depth.png)
+
+![Normals image for C01](Solution Images/Week 2/C01_Plane_normal.png)
+
+![Depth image for C07](Solution Images/Week 2/C07_Shine_depth.png)
+
+![Normals image for C07](Solution Images/Week 2/C07_Shine_normal.png)
 
 # Resources
 
