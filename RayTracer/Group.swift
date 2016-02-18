@@ -24,7 +24,6 @@ class Group: Hitable {
     }
     
     func intersect(ray r: Ray, tMin: Float, hit h: Hit) -> Bool {
-        //TODO: Remove this line once you review this method...
         var intersected = false
         for object in objects {
             intersected = object.intersect(ray: r, tMin: tMin, hit: h) || intersected

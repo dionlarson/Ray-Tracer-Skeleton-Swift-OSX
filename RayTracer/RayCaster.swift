@@ -61,7 +61,17 @@ class RayCaster: Renderer {
     func render(saveImage saveImage: Bool, saveDepth: Bool, saveNormal: Bool) {
         windowController.updateStatusLabel("Ray casting", scene: sceneFile)
         
-        //FIXME: Not yet implemented!
+        for i in 0..<width {
+            if i % 10 == 0 {
+                windowController.updateStatusLabel("Ray casting column \(i) of \(width) for", scene: sceneFile)
+            }
+            for j in 0..<height {
+                raycastPixel(i, j)
+            }
+        }
+        
+        windowController.updateStatusLabel("Processing depth pixels for", scene: sceneFile)
+        processDepth(saveImage: saveDepth)
         
         // release images and scene to free up memory -- will need to be
         // recreated if rendedered again!
@@ -72,7 +82,15 @@ class RayCaster: Renderer {
     }
     
     func raycastPixel(i: Int, _ j: Int) {
-        //FIXME: Not yet implemented!
+        let x = (Float(i) - Float(width)/2) / (Float(width)/2) + (1 / Float(width))
+        let y = (-Float(j) + Float(height)/2) / (Float(height)/2) + (1 / Float(height))
+        
+        let ray = scene.camera.generateRay(point: vector_float2(x, y))
+        let hit = Hit()
+        
+        if scene.group.intersect(ray: ray, tMin: scene.camera.tMin, hit: hit) {
+            setDepthPixel(x: i, y: j, hit: hit)
+        }
     }
     
     func shade(ray ray: Ray, hit: Hit) -> vector_float3 {

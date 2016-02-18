@@ -34,17 +34,17 @@ class PerspectiveCamera : Camera {
     internal let aspect: Float
 
     init(center: vector_float3, direction: vector_float3, up: vector_float3, fieldOfView: Float, w: Int, h: Int) {
-        //FIXME: Not yet implemented!
-        self.center = vector_float3()
-        self.direction = vector_float3()
-        self.horizontal = vector_float3()
-        self.up = vector_float3()
-        self.fieldOfView = 0
-        self.aspect = 0
+        self.center = center
+        self.direction = normalize(direction)
+        self.horizontal = normalize(cross(direction, up))
+        self.up = normalize(cross(horizontal, direction))
+        self.fieldOfView = fieldOfView
+        self.aspect = Float(h) / Float(w)
     }
     
     func generateRay(point point: vector_float2) -> Ray {
-        //FIXME: Not yet implemented!
-        return Ray(origin: vector_float3(), direction: vector_float3())
+        let d = 1 / tanf(fieldOfView / 2)
+        let r = normalize(point.x * horizontal + point.y * aspect * up + d * direction)
+        return Ray(origin: center, direction: r)
     }
 }
