@@ -101,6 +101,36 @@ Without the `abs`, normals in the negative direction get clipped to `0` (black).
 
 ![Normals image for C07](Solution Images/Week 2/C07_Shine_normal.png)
 
+# Week 3
+
+## Diffuse shading
+
+### Ambient light
+
+Implement ambient lighting in the `shade` function of `RayCaster`. It should calculate a color based on `scene.ambientLight` multiplied by the hit material's diffuse color.
+
+### Render shaded image
+
+Update your `raycastPixel` function. Whenever there is an intersection in your scene, call `image.setPixel` with the results of `shade`. When there is not an intersection, call `image.setPixel` with `scene.backgroundColor`.
+
+### Diffuse shading
+
+Implement the `shade` function in `Material`. It should return the shaded diffuse color for a single light source (see lecture notes).
+
+Update the `shade` function in `RayCaster` to iterate over each `scene.lights` and call `shade` on the hit material (use `light.getIllumination`). The returned value should be the sum of each light's shaded color and the previously calculated ambient light shading.
+
+### Hints
+
+- Set `SCENES_TO_PARSE` to `SceneFile.spheres`
+- Make sure light direction and surface normals are normalized for diffuse calculations!
+- Make sure your code displays the shaded image automatically. Press `N` on your keyboard to view the normals image, `D` to view the depth image, `I` to view the shaded image.
+
+### Expected results
+
+![Diffuse image for C01](Solution Images/Week 3/C01_Plane_No_Specular.png)
+
+![Depth image for C07](Solution Images/Week 3/C07_Shine_No_Specular.png)
+
 # Resources
 
 ## Slides
