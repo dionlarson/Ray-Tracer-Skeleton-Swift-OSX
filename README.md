@@ -35,7 +35,7 @@ The shaded image is set up to show automatically once done processing. Early on,
 ### Set up the camera
 
 Implement `PerspectiveCamera`'s `init` function correctly. `up` and `direction` are guaranteed to be on the same plane but are not necessarily perpendicular to each other. The direction of the `direction` vector should not change but use cross product to guarantee all 3 parts of your orthobasis are perpendicular to each other. Don't forget to normalize your basis vectors!
-    
+
 Once your camera is initialized, implement `generateRay` according to the lecture. Make sure that your `generateRay` uses normalized coordinates for your image plane (-1 < x < 1 and -1 < y < 1).
 
 ### Set up the ray cast loop
@@ -130,6 +130,26 @@ Update the `shade` function in `RayCaster` to iterate over each `scene.lights` a
 ![Diffuse image for C01](Solution Images/Week 3/C01_Plane_No_Specular.png)
 
 ![Depth image for C07](Solution Images/Week 3/C07_Shine_No_Specular.png)
+
+# Week 4
+
+## Phong shading model
+
+### Specular shading
+
+Update the `shade` function in `Material`. It should now implement the specular component and diffuse component of the phong shading model (see lecture notes).
+
+### Hints
+
+- Set `SCENES_TO_PARSE` to `SceneFile.spheres`
+- Make sure light direction and surface normals are normalized for specular calculations!
+- Make sure your code displays the shaded image automatically. Press `N` on your keyboard to view the normals image, `D` to view the depth image, `I` to view the shaded image.
+
+### Expected results
+
+![Shaded image for C01](Solution Images/Week 4/C01_Plane.png)
+
+![Shaded image for C07](Solution Images/Week 4/C07_Shine.png)
 
 # Resources
 
