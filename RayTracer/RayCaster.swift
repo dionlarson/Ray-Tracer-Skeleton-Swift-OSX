@@ -72,6 +72,7 @@ class RayCaster: Renderer {
         
         windowController.updateStatusLabel("Processing depth pixels for", scene: sceneFile)
         processDepth(saveImage: saveDepth)
+        processNormals(saveImage: saveNormal)
         
         // release images and scene to free up memory -- will need to be
         // recreated if rendedered again!
@@ -90,6 +91,7 @@ class RayCaster: Renderer {
         
         if scene.group.intersect(ray: ray, tMin: scene.camera.tMin, hit: hit) {
             setDepthPixel(x: i, y: j, hit: hit)
+            setNormalPixel(x: i, y: j, hit: hit)
         }
     }
     
