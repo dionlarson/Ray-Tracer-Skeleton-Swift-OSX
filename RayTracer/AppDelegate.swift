@@ -45,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let WIDTH = 400
     let HEIGHT = 400
     // array of scenes to parse see SceneFile enum
-    let SCENES_TO_PARSE: [SceneFile] = SceneFile.planes
+    let SCENES_TO_PARSE: [SceneFile] = SceneFile.spheres
     // saves images to desktop, overwrites previous copy if exists
     let SAVE_IMAGES = true
     let SAVE_DEPTH = true
