@@ -151,6 +151,25 @@ Update the `shade` function in `Material`. It should now implement the specular 
 
 ![Shaded image for C07](Solution Images/Week 4/C07_Shine.png)
 
+# Week 5
+
+## Transformations
+
+Implement the `intersect` function in `Transform`. Reference slides and `MathHelper.swift` as necessary.
+
+### Expected results
+
+![Depth image for C03](Solution Images/Week 5/C03_Sphere_depth.png)
+
+![Normals image for C03](Solution Images/Week 5/C03_Sphere_normal.png)
+
+![Shaded image for C03](Solution Images/Week 5/C03_Sphere.png)
+
+### Hints
+
+- Set `SCENES_TO_PARSE` to `SceneFile.transforms`
+- Make sure you are consistent with normalizing vs not normalizing. You may need to modify old code!
+
 # Resources
 
 ## Slides
