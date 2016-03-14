@@ -39,11 +39,14 @@ class Material {
     }
     
     func shade(ray: Ray, hit: Hit, lightInfo light: (direction: vector_float3, color: vector_float3)) -> vector_float3 {
+        guard let normal = hit.normal else { fatalError("Hit does not have a normal!") }
         let influence = max(dot(hit.normal!, light.direction), 0)
         if influence == 0 { return vector_float3() }
-        let shadedColor = diffuseColor * influence * light.color
+        var shadedColor = diffuseColor * influence * light.color
         
-        // specular calculation
+        let reflectedLight = -light.direction + 2 * influence * normal
+        let specularAmount = max(dot(-ray.direction, reflectedLight), 0) ** shininess
+        shadedColor += specularColor * specularAmount * light.color
 
         return shadedColor
     }
