@@ -170,6 +170,21 @@ Implement the `intersect` function in `Transform`. Reference slides and `MathHel
 - Set `SCENES_TO_PARSE` to `SceneFile.transforms`
 - Make sure you are consistent with normalizing vs not normalizing. You may need to modify old code!
 
+# Week 6
+
+## Ray-triangle intersection
+
+Implement the `intersect` function in `Triangle`. Reference slides and `MathHelper.swift` as necessary.
+
+### Expected results
+
+You can view the expected results [here](./Solution Images/Week 6/).
+
+### Hints
+
+- Set `SCENES_TO_PARSE` to `SceneFile.triangles`
+- Remember to use the barycentric values for interpolating your normals!
+
 # Resources
 
 ## Slides
