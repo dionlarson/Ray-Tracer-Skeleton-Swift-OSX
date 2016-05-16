@@ -69,9 +69,33 @@ class Triangle: ObjectType, Equatable {
     }
     
     func intersect(ray r: Ray, tMin: Float, hit h: Hit) -> Bool {
-        //FIXME: Not yet implemented!
+        let detA = determinant(matrix_float3x3(columns: (a-b, a-c, r.direction)))
         
-        return false
+        let detBeta = determinant(matrix_float3x3(columns: (a-r.origin, a-c, r.direction)))
+        let beta = detBeta / detA
+        
+        let detGamma = determinant(matrix_float3x3(columns: (a-b, a-r.origin, r.direction)))
+        let gamma = detGamma / detA
+        
+        let detT = determinant(matrix_float3x3(columns: (a-b, a-c, a-r.origin)))
+        let t = detT / detA
+        
+        guard beta + gamma <= 1 && beta >= 0 && gamma >= 0 && t > tMin && t < h.t else {
+            return false
+        }
+        
+        let alpha = 1 - beta - gamma
+        let interNormal = alpha * normals[0] + beta * normals[1] + gamma * normals[2]
+        
+        if let textureCoords = textureCoords {
+            var interTexCoords = alpha * textureCoords[0] + beta * textureCoords[1]
+            interTexCoords += gamma * textureCoords[2]
+            h.set(t: t, material: material, normal: interNormal, textureCoords: interTexCoords)
+        } else {
+            h.set(t: t, material: material, normal: interNormal)
+        }
+        
+        return true
     }
     
 }

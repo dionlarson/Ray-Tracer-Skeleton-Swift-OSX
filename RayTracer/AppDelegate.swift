@@ -45,13 +45,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let WIDTH = 400
     let HEIGHT = 400
     // array of scenes to parse see SceneFile enum
-    let SCENES_TO_PARSE: [SceneFile] = SceneFile.transforms
+    let SCENES_TO_PARSE: [SceneFile] = SceneFile.textures
     // saves images to desktop, overwrites previous copy if exists
     let SAVE_IMAGES = true
     let SAVE_DEPTH = true
     let SAVE_NORMAL = true
     // higher memory use but quicker triangle intersections
-    let USE_OCTREE = false
+    let USE_OCTREE = true
     
     var renderers = [Renderer]()
     func applicationDidFinishLaunching(aNotification: NSNotification) {

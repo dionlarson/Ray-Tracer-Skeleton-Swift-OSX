@@ -42,7 +42,13 @@ class Material {
         guard let normal = hit.normal else { fatalError("Hit does not have a normal!") }
         let influence = max(dot(hit.normal!, light.direction), 0)
         if influence == 0 { return vector_float3() }
-        var shadedColor = diffuseColor * influence * light.color
+        
+        var shadedColor = vector_float3()
+        if let texture = texture, let texCoords = hit.textureCoords {
+            shadedColor += texture.colorAt(texCoords) * influence * light.color
+        } else {
+            shadedColor += diffuseColor * influence * light.color
+        }
         
         let reflectedLight = -light.direction + 2 * influence * normal
         let specularAmount = max(dot(-ray.direction, reflectedLight), 0) ** shininess
