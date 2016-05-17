@@ -34,7 +34,6 @@ class Sphere: ObjectType, CustomStringConvertible {
     }
     
     func intersect(ray r: Ray, tMin: Float, hit h: Hit) -> Bool {
-        // TODO: Fix return to return false for negative t values
         let originTranslation = r.origin - center
         let a = length(r.direction) ** 2
         let b = dot(2 * r.direction, originTranslation)
@@ -53,6 +52,8 @@ class Sphere: ObjectType, CustomStringConvertible {
         } else if t1 > tMin && t1 < h.t {
             let n = normalize(r.pointAtParameter(t1) - center)
             h.set(t: t1, material: material, normal: n)
+        } else {
+            return false
         }
         
         return true

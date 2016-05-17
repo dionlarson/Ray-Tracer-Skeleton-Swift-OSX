@@ -36,6 +36,10 @@
 		BC508E441C65BFBE00F308F9 /* RayCaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC508E431C65BFBE00F308F9 /* RayCaster.swift */; };
 		BC508E461C65BFE500F308F9 /* ResultsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC508E451C65BFE500F308F9 /* ResultsWindow.swift */; };
 		BC508E4A1C65CC5300F308F9 /* ResultsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC508E491C65CC5300F308F9 /* ResultsWindow.xib */; };
+		BC888A8C1CEA495D00484809 /* A01_Plane.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC888A8B1CEA495D00484809 /* A01_Plane.plist */; };
+		BC888A8E1CEA5B2400484809 /* A10_Surprise_2_5k.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC888A8D1CEA5B2400484809 /* A10_Surprise_2_5k.plist */; };
+		BC888A911CEA5CAD00484809 /* A12_Bat_Owl.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC888A8F1CEA5CAD00484809 /* A12_Bat_Owl.plist */; };
+		BC888A921CEA5CAD00484809 /* C12_Bat_Owl.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC888A901CEA5CAD00484809 /* C12_Bat_Owl.plist */; };
 		BCA93F061C690DD10055DCC5 /* Octree.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA93F051C690DD10055DCC5 /* Octree.swift */; };
 		BCE0CAAC1C65E49700EB9D03 /* C10_Surprise_2_5k.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE0CAAB1C65E49700EB9D03 /* C10_Surprise_2_5k.plist */; };
 		BCE0CAAE1C65EFAD00EB9D03 /* surprise_2_5k.obj in Resources */ = {isa = PBXBuildFile; fileRef = BCE0CAAD1C65EFAD00EB9D03 /* surprise_2_5k.obj */; };
@@ -86,6 +90,10 @@
 		BC508E431C65BFBE00F308F9 /* RayCaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RayCaster.swift; sourceTree = "<group>"; };
 		BC508E451C65BFE500F308F9 /* ResultsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsWindow.swift; sourceTree = "<group>"; };
 		BC508E491C65CC5300F308F9 /* ResultsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsWindow.xib; sourceTree = "<group>"; };
+		BC888A8B1CEA495D00484809 /* A01_Plane.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = A01_Plane.plist; path = RayTracer/Scenes/A01_Plane.plist; sourceTree = SOURCE_ROOT; };
+		BC888A8D1CEA5B2400484809 /* A10_Surprise_2_5k.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = A10_Surprise_2_5k.plist; path = Scenes/A10_Surprise_2_5k.plist; sourceTree = "<group>"; };
+		BC888A8F1CEA5CAD00484809 /* A12_Bat_Owl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = A12_Bat_Owl.plist; path = Scenes/A12_Bat_Owl.plist; sourceTree = "<group>"; };
+		BC888A901CEA5CAD00484809 /* C12_Bat_Owl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = C12_Bat_Owl.plist; path = Scenes/C12_Bat_Owl.plist; sourceTree = "<group>"; };
 		BCA93F051C690DD10055DCC5 /* Octree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Octree.swift; sourceTree = "<group>"; };
 		BCE0CAAB1C65E49700EB9D03 /* C10_Surprise_2_5k.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = C10_Surprise_2_5k.plist; path = Scenes/C10_Surprise_2_5k.plist; sourceTree = "<group>"; };
 		BCE0CAAD1C65EFAD00EB9D03 /* surprise_2_5k.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = surprise_2_5k.obj; sourceTree = "<group>"; };
@@ -124,6 +132,7 @@
 			children = (
 				BC09F4EF1C63FC0400CF77B7 /* Meshes */,
 				BC09F4F81C63FC0400CF77B7 /* Textures */,
+				BC888A8B1CEA495D00484809 /* A01_Plane.plist */,
 				BC09F4D21C629C8C00CF77B7 /* C01_Plane.plist */,
 				BC09F4DF1C63483200CF77B7 /* C02_Cube.plist */,
 				BC09F4E01C63483200CF77B7 /* C03_Sphere.plist */,
@@ -134,6 +143,9 @@
 				BC09F4E51C63483200CF77B7 /* C08_C.plist */,
 				BC09F4E61C63483200CF77B7 /* C09_S.plist */,
 				BCE0CAAB1C65E49700EB9D03 /* C10_Surprise_2_5k.plist */,
+				BC888A8D1CEA5B2400484809 /* A10_Surprise_2_5k.plist */,
+				BC888A8F1CEA5CAD00484809 /* A12_Bat_Owl.plist */,
+				BC888A901CEA5CAD00484809 /* C12_Bat_Owl.plist */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -277,7 +289,9 @@
 			files = (
 				BC09F5011C63FC0400CF77B7 /* c2.obj in Resources */,
 				BC09F4E81C63483200CF77B7 /* C03_Sphere.plist in Resources */,
+				BC888A8C1CEA495D00484809 /* A01_Plane.plist in Resources */,
 				BC09F5001C63FC0400CF77B7 /* c1.obj in Resources */,
+				BC888A911CEA5CAD00484809 /* A12_Bat_Owl.plist in Resources */,
 				BC09F5091C63FC0400CF77B7 /* feet.bmp in Resources */,
 				BC09F5061C63FC0400CF77B7 /* body.bmp in Resources */,
 				BC09F4E91C63483200CF77B7 /* C04_Axes.plist in Resources */,
@@ -299,6 +313,8 @@
 				BCE0CAAC1C65E49700EB9D03 /* C10_Surprise_2_5k.plist in Resources */,
 				BC09F4EC1C63483200CF77B7 /* C07_Shine.plist in Resources */,
 				BC09F4EE1C63483200CF77B7 /* C09_S.plist in Resources */,
+				BC888A8E1CEA5B2400484809 /* A10_Surprise_2_5k.plist in Resources */,
+				BC888A921CEA5CAD00484809 /* C12_Bat_Owl.plist in Resources */,
 				BC09F5081C63FC0400CF77B7 /* chicken.bmp in Resources */,
 				BC09F5031C63FC0400CF77B7 /* chicken.obj in Resources */,
 				BC09F4E71C63483200CF77B7 /* C02_Cube.plist in Resources */,

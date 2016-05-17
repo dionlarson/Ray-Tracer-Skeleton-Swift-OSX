@@ -33,7 +33,6 @@ class TriangleMesh: Hitable {
     }
     
     func intersect(ray r: Ray, tMin: Float, hit h: Hit) -> Bool {
-        //TODO: Remove this line once you review this method...
         guard let octree = octree else {
             var intersected = false
             for t in triangles {

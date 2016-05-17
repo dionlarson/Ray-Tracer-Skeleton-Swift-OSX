@@ -70,12 +70,17 @@ class Scene {
             return nil
         }
         
+        let center = readVector3f(data["center"])
+        let direction = readVector3f(data["direction"])
+        let up = readVector3f(data["up"])
+        let angle = degreesToRadians(readFloat(data["angle"]))
+        
         if type == "PerspectiveCamera" {
-            let center = readVector3f(data["center"])
-            let direction = readVector3f(data["direction"])
-            let up = readVector3f(data["up"])
-            let angle = degreesToRadians(readFloat(data["angle"]))
             return PerspectiveCamera(center: center, direction: direction, up: up, fieldOfView: angle, w: w, h: h)
+        } else if type == "ApertureCamera" {
+            let apertureSize = readFloat(data["apertureSize"])
+            let focalLength = readFloat(data["focalLength"])
+            return ApertureCamera(apertureSize: apertureSize, focalLength: focalLength, center: center, direction: direction, up: up, fieldOfView: angle, w: w, h: h)
         } else {
             fatalError("Camera type is not known!")
         }

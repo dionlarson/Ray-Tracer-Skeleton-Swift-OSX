@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Camera</key>
+	<dict>
+		<key>type</key>
+		<string>PerspectiveCamera</string>
+		<key>center</key>
+		<string>0 -300 250</string>
+		<key>direction</key>
+		<string>0 1 -.50</string>
+		<key>up</key>
+		<string>0 0 1</string>
+		<key>angle</key>
+		<string>35</string>
+	</dict>
+	<key>Lights</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>PointLight</string>
+			<key>position</key>
+			<string>50 -45 200</string>
+			<key>color</key>
+			<string>0 0 0.95</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PointLight</string>
+			<key>position</key>
+			<string>-50 -45 200</string>
+			<key>color</key>
+			<string>0.95 0 0</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>PointLight</string>
+			<key>position</key>
+			<string>0 -45 50</string>
+			<key>color</key>
+			<string>0 0.95 0</string>
+		</dict>
+	</array>
+	<key>Background</key>
+	<dict>
+		<key>color</key>
+		<string>0 0 0</string>
+		<key>ambientLight</key>
+		<string>0.1 0.1 0.1</string>
+	</dict>
+	<key>Materials</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>PhongMaterial</string>
+			<key>diffuseColor</key>
+			<string>.95 .95 .95</string>
+			<key>specularColor</key>
+			<string>0.7 0.7 0.7</string>
+			<key>shininess</key>
+			<string>20</string>
+		</dict>
+	</array>
+	<key>Group</key>
+	<array>
+		<dict>
+			<key>materialIndex</key>
+			<string>0</string>
+			<key>type</key>
+			<string>Plane</string>
+			<key>normal</key>
+			<string>0 -1 0</string>
+			<key>offset</key>
+			<string>40</string>
+		</dict>
+		<dict>
+			<key>materialIndex</key>
+			<string>0</string>
+			<key>type</key>
+			<string>Plane</string>
+			<key>normal</key>
+			<string>0 0 1</string>
+			<key>offset</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>materialIndex</key>
+			<string>0</string>
+			<key>type</key>
+			<string>TriangleMesh</string>
+			<key>objFile</key>
+			<string>bat_owl</string>
+		</dict>
+	</array>
+</dict>
+</plist>

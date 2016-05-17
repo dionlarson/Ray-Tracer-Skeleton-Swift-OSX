@@ -24,6 +24,8 @@ enum SceneFile: String {
     case C08_C = "C08_C"
     case C09_S = "C09_S"
     case C10_Surprise_2_5k = "C10_Surprise_2_5k"
+    case A01_Plane = "A01_Plane"
+    case A10_Surprise_2_5k = "A10_Surprise_2_5k"
     
     static let planes = [C01_Plane]
     static let spheres = [C01_Plane, C07_Shine]
@@ -40,12 +42,14 @@ enum SceneFile: String {
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+//    let time = UInt32(NSDate().timeIntervalSinceReferenceDate)
+//    srandom(time)
     
     // width & heigh in pixels
     let WIDTH = 400
     let HEIGHT = 400
     // array of scenes to parse see SceneFile enum
-    let SCENES_TO_PARSE: [SceneFile] = SceneFile.textures
+    let SCENES_TO_PARSE: [SceneFile] = [.A10_Surprise_2_5k]
     // saves images to desktop, overwrites previous copy if exists
     let SAVE_IMAGES = true
     let SAVE_DEPTH = true

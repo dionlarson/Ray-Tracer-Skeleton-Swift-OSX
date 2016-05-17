@@ -48,3 +48,38 @@ class PerspectiveCamera : Camera {
         return Ray(origin: center, direction: r)
     }
 }
+
+class ApertureCamera : PerspectiveCamera {
+    
+    internal let apertureSize: Float
+    internal let focalLength: Float
+    
+    init(apertureSize: Float, focalLength: Float, center: vector_float3, direction: vector_float3, up: vector_float3, fieldOfView: Float, w: Int, h: Int) {
+        self.apertureSize = apertureSize
+        self.focalLength = focalLength
+        super.init(center: center, direction: direction, up: up, fieldOfView: fieldOfView, w: w, h: h)
+    }
+    
+//        let theta = Double(random()) / Double(Int.max) * 2 * M_PI
+//        let jitterDistance = Double(random()) / Double(Int.max) * Double(camera.apertureSize)
+    
+    func generateSquareJitteredRay(focalPoint: vector_float3) -> Ray {
+        let jitterX = Float(rand() - RAND_MAX/2) / Float(RAND_MAX/2) * apertureSize
+        let jitterY = Float(rand() - RAND_MAX/2) / Float(RAND_MAX/2) * apertureSize
+        let jitteredCenter = center + horizontal * jitterX + up * jitterY
+        let direction = normalize(focalPoint - jitteredCenter)
+        return Ray(origin: jitteredCenter, direction: direction)
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+

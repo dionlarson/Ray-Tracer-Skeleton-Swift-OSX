@@ -66,7 +66,11 @@ class RayCaster: Renderer {
                 windowController.updateStatusLabel("Ray casting column \(i) of \(width) for", scene: sceneFile)
             }
             for j in 0..<height {
-                raycastPixel(i, j)
+                if scene.camera is ApertureCamera {
+                    raycastAperturePixel(i, j)
+                } else {
+                    raycastPixel(i, j)
+                }
             }
         }
         
@@ -81,6 +85,34 @@ class RayCaster: Renderer {
         depthImage = nil
         normalsImage = nil
         scene = nil
+    }
+    
+    func raycastAperturePixel(i: Int, _ j: Int) {
+        guard let camera = scene.camera as? ApertureCamera else {
+            fatalError("raycastAperturePixel called without ApertureCamera!")
+        }
+        let x = (Float(i) - Float(width)/2) / (Float(width)/2) + (1 / Float(width))
+        let y = (-Float(j) + Float(height)/2) / (Float(height)/2) + (1 / Float(height))
+        
+        let centerRay = camera.generateRay(point: vector_float2(x, y))
+        let focalPoint = centerRay.pointAtParameter(camera.focalLength)
+        var color = vector_float3()
+        
+        let samples = 16
+        for _ in 0..<samples {
+            let castRay = camera.generateSquareJitteredRay(focalPoint)
+            let hit = Hit()
+            
+            if scene.group.intersect(ray: castRay, tMin: scene.camera.tMin, hit: hit) {
+                color += shade(ray: castRay, hit: hit)
+            } else {
+                color += scene.backgroundColor
+            }
+        }
+        
+        image.setPixel(x: i, y: j, color: color/vector_float3(Float(samples), Float(samples), Float(samples)))
+//        setDepthPixel(x: i, y: j, hit: hit)
+//        setNormalPixel(x: i, y: j, hit: hit)
     }
     
     func raycastPixel(i: Int, _ j: Int) {
