@@ -16,11 +16,18 @@ import Foundation
 import simd
 import Cocoa
 
+func sync(lock: AnyObject, closure: () -> Void) {
+    objc_sync_enter(lock)
+    closure()
+    objc_sync_exit(lock)
+}
+
 class Image {
     
     let width: Int
     let height: Int
     var data: [vector_float3]
+    let synced = NSObject()
     
     init(width: Int, height: Int) {
         self.width = width
@@ -35,7 +42,7 @@ class Image {
     
     func setPixel(x x: Int, y: Int, color: vector_float3) {
         checkBounds(x, y)
-        data[y * width + x] = color
+        sync(synced) { self.data[y * self.width + x] = color }
     }
     
     func setAllPixels(color: vector_float3) {
@@ -140,8 +147,8 @@ private func NSImageFromARGB32Bitmap(var pixels: [PixelData], width: Int, height
         nil,
         true,
         .RenderingIntentDefault
-    ) else {
-        fatalError("Failed to create image from pixel data!")
+        ) else {
+            fatalError("Failed to create image from pixel data!")
     }
     
     let image = NSImage(CGImage: cgImage, size: NSSize(width: width, height: height))
