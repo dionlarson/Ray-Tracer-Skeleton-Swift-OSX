@@ -33,9 +33,9 @@ enum SceneFile: String {
     static let textures = [C08_C, C09_S]
     
     static let allFastValues = [C01_Plane, C02_Cube, C03_Sphere, C04_Axes,
-        C07_Shine, C08_C, C09_S]
+                                C07_Shine, C08_C, C09_S]
     static let allValues = [C01_Plane, C02_Cube, C03_Sphere, C04_Axes,
-        C05_Bunny_200, C06_Bunny_1k, C07_Shine, C08_C, C09_S, C10_Surprise_2_5k]
+                            C05_Bunny_200, C06_Bunny_1k, C07_Shine, C08_C, C09_S, C10_Surprise_2_5k]
 }
 
 @NSApplicationMain
@@ -45,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let WIDTH = 400
     let HEIGHT = 400
     // array of scenes to parse see SceneFile enum
-    let SCENES_TO_PARSE: [SceneFile] = SceneFile.spheres
+    let SCENES_TO_PARSE: [SceneFile] = SceneFile.planes
     // saves images to desktop, overwrites previous copy if exists
     let SAVE_IMAGES = true
     let SAVE_DEPTH = true
@@ -68,10 +68,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
         return true
     }
-
+    
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
-
+    
 }
-

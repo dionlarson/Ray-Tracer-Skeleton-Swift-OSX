@@ -39,13 +39,9 @@ class Material {
     }
     
     func shade(ray: Ray, hit: Hit, lightInfo light: (direction: vector_float3, color: vector_float3)) -> vector_float3 {
-        let influence = max(dot(hit.normal!, light.direction), 0)
-        if influence == 0 { return vector_float3() }
-        let shadedColor = diffuseColor * influence * light.color
+        //FIXME: Not yet implemented!
         
-        // specular calculation
-
-        return shadedColor
+        return vector_float3()
     }
     
 }

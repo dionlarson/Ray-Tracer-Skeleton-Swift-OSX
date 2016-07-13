@@ -47,7 +47,7 @@ class PointLight: Light {
         self.color = color
     }
     
-    // Fall off not implemented yet, will come in second half of class
+    // No implemented yet, will come in second half of class
     func getIllumination(point p: vector_float3) -> (direction: vector_float3, color: vector_float3)  {
         let pointToLight = self.position - p
         let direction = normalize(pointToLight)
